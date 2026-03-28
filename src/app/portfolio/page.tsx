@@ -28,7 +28,7 @@ export default function PortfolioPage() {
           style={{ backgroundColor: "#0F2B46" }}
         >
           <Container>
-            <div className="text-center max-w-3xl mx-auto">
+            <div className="text-center max-w-[48rem] mx-auto">
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
                 Portfolio
               </h1>
@@ -54,7 +54,7 @@ export default function PortfolioPage() {
               >
                 Vi jobber med å samle våre beste prosjekter
               </h2>
-              <p className="text-lg max-w-2xl mx-auto" style={{ color: "#64748B" }}>
+              <p className="text-lg max-w-[42rem] mx-auto" style={{ color: "#64748B" }}>
                 Vi er i ferd med å dokumentere våre prosjekter. I mellomtiden kan
                 du ta kontakt for å høre mer om hva vi kan gjøre for deg.
               </p>

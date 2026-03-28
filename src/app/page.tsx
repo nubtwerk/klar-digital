@@ -105,7 +105,7 @@ export default function HomePage() {
           style={{ backgroundColor: "#0F2B46" }}
         >
           <Container>
-            <div className="flex flex-col items-center text-center py-20 lg:py-28 max-w-3xl mx-auto">
+            <div className="flex flex-col items-center text-center py-20 lg:py-28 max-w-[48rem] mx-auto">
               <span
                 className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-6"
                 style={{ backgroundColor: "#1E3A5F", color: "#93C5FD" }}
@@ -119,7 +119,7 @@ export default function HomePage() {
               </h1>
 
               <p
-                className="text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl"
+                className="text-lg sm:text-xl leading-relaxed mb-10 max-w-[42rem]"
                 style={{ color: "#94A3B8" }}
               >
                 Vi hjelper lokale bedrifter med å vokse digitalt. Få en
@@ -174,7 +174,7 @@ export default function HomePage() {
                 Våre pakker
               </h2>
               <p
-                className="text-lg max-w-2xl mx-auto"
+                className="text-lg max-w-[42rem] mx-auto"
                 style={{ color: "#64748B" }}
               >
                 Velg pakken som passer din bedrift. Alle inkluderer responsivt
@@ -241,7 +241,7 @@ export default function HomePage() {
                 Slik jobber vi
               </h2>
               <p
-                className="text-lg max-w-2xl mx-auto"
+                className="text-lg max-w-[42rem] mx-auto"
                 style={{ color: "#64748B" }}
               >
                 Fra første samtale til ferdig nettside — en enkel prosess i fire
@@ -287,7 +287,7 @@ export default function HomePage() {
                 Sammenlign pakker
               </h2>
               <p
-                className="text-lg max-w-2xl mx-auto"
+                className="text-lg max-w-[42rem] mx-auto"
                 style={{ color: "#64748B" }}
               >
                 Alle pakker inkluderer grunnleggende funksjoner. Oppgrader for
@@ -430,7 +430,7 @@ export default function HomePage() {
                 Hva kundene sier
               </h2>
               <p
-                className="text-lg max-w-2xl mx-auto"
+                className="text-lg max-w-[42rem] mx-auto"
                 style={{ color: "#64748B" }}
               >
                 Vi er stolte av å levere resultater som gjør en forskjell.
@@ -478,7 +478,7 @@ export default function HomePage() {
         {/* CTA section */}
         <section className="py-16 lg:py-20" style={{ backgroundColor: "#2563EB" }}>
           <Container>
-            <div className="text-center max-w-2xl mx-auto">
+            <div className="text-center max-w-[42rem] mx-auto">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                 Klar for å vokse digitalt?
               </h2>
@@ -514,7 +514,7 @@ export default function HomePage() {
         {/* Inline contact form */}
         <Section variant="white" id="kontakt">
           <Container>
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-[42rem] mx-auto">
               <div className="text-center mb-8">
                 <h2
                   className="text-3xl sm:text-4xl font-bold mb-4"

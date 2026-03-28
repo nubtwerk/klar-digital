@@ -105,7 +105,7 @@ export default function TjenesterPage() {
           style={{ backgroundColor: "#0F2B46" }}
         >
           <Container>
-            <div className="text-center max-w-3xl mx-auto">
+            <div className="text-center max-w-[48rem] mx-auto">
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
                 Våre tjenester
               </h1>
@@ -239,7 +239,7 @@ export default function TjenesterPage() {
         {/* CTA */}
         <section className="py-16 lg:py-20" style={{ backgroundColor: "#2563EB" }}>
           <Container>
-            <div className="text-center max-w-2xl mx-auto">
+            <div className="text-center max-w-[42rem] mx-auto">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                 Usikker på hvilken pakke?
               </h2>

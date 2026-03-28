@@ -50,7 +50,7 @@ export default function OmOssPage() {
           style={{ backgroundColor: "#0F2B46" }}
         >
           <Container>
-            <div className="text-center max-w-3xl mx-auto">
+            <div className="text-center max-w-[48rem] mx-auto">
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
                 Om Klar Digital
               </h1>
@@ -65,7 +65,7 @@ export default function OmOssPage() {
         {/* Story */}
         <Section variant="white">
           <Container>
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-[48rem] mx-auto">
               <h2
                 className="text-3xl font-bold mb-6"
                 style={{ color: "#0F2B46" }}
@@ -105,7 +105,7 @@ export default function OmOssPage() {
               >
                 Våre verdier
               </h2>
-              <p className="text-lg max-w-2xl mx-auto" style={{ color: "#64748B" }}>
+              <p className="text-lg max-w-[42rem] mx-auto" style={{ color: "#64748B" }}>
                 Alt vi gjør er forankret i fire kjerneverdier.
               </p>
             </div>
@@ -141,7 +141,7 @@ export default function OmOssPage() {
         {/* Why Klar Digital */}
         <Section variant="white">
           <Container>
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-[48rem] mx-auto">
               <h2
                 className="text-3xl font-bold mb-6 text-center"
                 style={{ color: "#0F2B46" }}
@@ -199,7 +199,7 @@ export default function OmOssPage() {
         {/* Team placeholder */}
         <Section variant="gray">
           <Container>
-            <div className="text-center max-w-2xl mx-auto">
+            <div className="text-center max-w-[42rem] mx-auto">
               <h2
                 className="text-3xl font-bold mb-4"
                 style={{ color: "#0F2B46" }}

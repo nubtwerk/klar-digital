@@ -23,7 +23,7 @@ export default function KontaktPage() {
           style={{ backgroundColor: "#0F2B46" }}
         >
           <Container>
-            <div className="text-center max-w-3xl mx-auto">
+            <div className="text-center max-w-[48rem] mx-auto">
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
                 Kontakt oss
               </h1>
