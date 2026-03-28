@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klar Digital — Raske, moderne nettsider for lokale bedrifter</title>
+  <meta name="description" content="Klar Digital leverer raske, konverteringsfokuserte nettsider for norske småbedrifter. Ferdig på dager, ikke måneder.">
+  <meta property="og:title" content="Klar Digital — Raske, moderne nettsider for lokale bedrifter">
+  <meta property="og:description" content="Vi leverer rene, moderne nettsider som konverterer — uten kostnaden til et stort byrå.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ==================== DESIGN TOKENS ==================== */
+    :root {
+      --color-primary: #0F2B46;
+      --color-accent: #2563EB;
+      --color-accent-hover: #1D4ED8;
+      --color-background: #FAFBFC;
+      --color-warm: #F59E0B;
+      --color-success: #059669;
+      --color-text: #0F2B46;
+      --color-text-secondary: #64748B;
+      --color-border: #E2E8F0;
+      --color-surface: #F1F5F9;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 32px;
+      --space-2xl: 48px;
+      --space-3xl: 64px;
+      --space-4xl: 96px;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+      --transition-fast: 150ms ease-out;
+      --transition-base: 300ms ease-out;
+    }
+
+    /* ==================== RESET & BASE ==================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background: var(--color-background);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--color-accent); text-decoration: none; transition: color var(--transition-fast); }
+    a:hover { color: var(--color-accent-hover); }
+
+    /* ==================== UTILITIES ==================== */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 var(--space-lg); }
+    .section { padding: var(--space-3xl) 0; }
+    .section-alt { background: var(--color-surface); }
+    .text-center { text-align: center; }
+    .text-secondary { color: var(--color-text-secondary); }
+    .eyebrow {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-sm);
+    }
+    h1 { font-size: 3rem; font-weight: 700; line-height: 1.1; }
+    h2 { font-size: 2.25rem; font-weight: 700; line-height: 1.2; margin-bottom: var(--space-md); }
+    h3 { font-size: 1.5rem; font-weight: 600; line-height: 1.3; margin-bottom: var(--space-sm); }
+    h4 { font-size: 1.25rem; font-weight: 600; line-height: 1.4; }
+    .subtitle { font-size: 1.125rem; color: var(--color-text-secondary); max-width: 65ch; line-height: 1.6; }
+    .subtitle.centered { margin-left: auto; margin-right: auto; }
+
+    /* ==================== BUTTONS ==================== */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 24px; border-radius: var(--radius-md);
+      font-size: 1rem; font-weight: 600; font-family: var(--font-sans);
+      cursor: pointer; transition: all var(--transition-fast);
+      min-height: 44px; border: none; text-decoration: none;
+    }
+    .btn-primary { background: var(--color-accent); color: #fff; }
+    .btn-primary:hover { background: var(--color-accent-hover); color: #fff; box-shadow: var(--shadow-md); }
+    .btn-secondary {
+      background: transparent; color: var(--color-primary);
+      border: 1.5px solid var(--color-primary);
+    }
+    .btn-secondary:hover { background: var(--color-primary); color: #fff; }
+    .btn-white { background: #fff; color: var(--color-primary); }
+    .btn-white:hover { background: var(--color-surface); color: var(--color-primary); box-shadow: var(--shadow-md); }
+
+    /* ==================== NAVIGATION ==================== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; max-width: 1280px; margin: 0 auto;
+      padding: 0 var(--space-lg);
+    }
+    .nav-logo { font-size: 1.5rem; font-weight: 700; color: var(--color-primary); text-decoration: none; }
+    .nav-logo span { font-weight: 400; color: var(--color-text-secondary); }
+    .nav-links { display: flex; align-items: center; gap: var(--space-xl); list-style: none; }
+    .nav-links a { color: var(--color-text); font-weight: 500; font-size: 0.9375rem; }
+    .nav-links a:hover { color: var(--color-accent); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: var(--space-sm); }
+    .nav-toggle svg { width: 24px; height: 24px; stroke: var(--color-primary); }
+
+    /* ==================== HERO ==================== */
+    .hero {
+      padding: calc(72px + var(--space-4xl)) 0 var(--space-4xl);
+      background: linear-gradient(135deg, #0F2B46 0%, #1E3A5F 100%);
+      color: #fff;
+    }
+    .hero-content { max-width: 720px; }
+    .hero h1 { color: #fff; margin-bottom: var(--space-lg); }
+    .hero .subtitle { color: rgba(255,255,255,0.8); margin-bottom: var(--space-xl); }
+    .hero-buttons { display: flex; gap: var(--space-md); flex-wrap: wrap; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: var(--space-sm);
+      background: rgba(255,255,255,0.1); border-radius: var(--radius-full, 9999px);
+      padding: var(--space-xs) var(--space-md); font-size: 14px;
+      color: rgba(255,255,255,0.9); margin-bottom: var(--space-lg);
+    }
+    .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-success); }
+
+    /* ==================== CARDS ==================== */
+    .card {
+      background: #fff; border: 1px solid var(--color-border);
+      border-radius: var(--radius-md); padding: var(--space-lg);
+      transition: box-shadow var(--transition-fast);
+    }
+    .card:hover { box-shadow: var(--shadow-md); }
+    .card-icon {
+      width: 48px; height: 48px; border-radius: var(--radius-md);
+      background: var(--color-surface); display: flex;
+      align-items: center; justify-content: center;
+      margin-bottom: var(--space-md);
+    }
+    .card-icon svg { width: 24px; height: 24px; stroke: var(--color-accent); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); }
+
+    /* ==================== SERVICES ==================== */
+    .service-card { text-align: center; }
+    .service-card p { color: var(--color-text-secondary); margin-top: var(--space-sm); }
+
+    /* ==================== STEPS ==================== */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
+    .step { text-align: center; position: relative; }
+    .step-number {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--color-accent); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1.25rem;
+      margin: 0 auto var(--space-md);
+    }
+    .step p { color: var(--color-text-secondary); }
+
+    /* ==================== STATS ==================== */
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); text-align: center; }
+    .stat-number { font-size: 2.5rem; font-weight: 700; color: var(--color-accent); line-height: 1; }
+    .stat-label { color: var(--color-text-secondary); margin-top: var(--space-xs); font-size: 0.9375rem; }
+
+    /* ==================== PRICING ==================== */
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); align-items: start; }
+    .pricing-card {
+      background: #fff; border: 1px solid var(--color-border);
+      border-radius: var(--radius-md); padding: var(--space-xl);
+      text-align: center; position: relative;
+    }
+    .pricing-card.featured {
+      border-color: var(--color-accent); box-shadow: var(--shadow-lg);
+      transform: scale(1.02);
+    }
+    .pricing-card.featured .pricing-badge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--color-accent); color: #fff; font-size: 13px;
+      font-weight: 600; padding: 4px 16px; border-radius: var(--radius-full, 9999px);
+    }
+    .pricing-price { font-size: 2.5rem; font-weight: 700; margin: var(--space-md) 0; }
+    .pricing-price span { font-size: 1rem; font-weight: 400; color: var(--color-text-secondary); }
+    .pricing-features { list-style: none; text-align: left; margin: var(--space-lg) 0; }
+    .pricing-features li {
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid var(--color-border);
+      display: flex; align-items: center; gap: var(--space-sm);
+      font-size: 0.9375rem;
+    }
+    .pricing-features li:last-child { border-bottom: none; }
+    .check { color: var(--color-success); font-weight: 700; }
+
+    /* ==================== TESTIMONIALS ==================== */
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
+    .testimonial {
+      background: #fff; border: 1px solid var(--color-border);
+      border-radius: var(--radius-md); padding: var(--space-lg);
+    }
+    .testimonial-text { font-style: italic; color: var(--color-text-secondary); margin-bottom: var(--space-md); line-height: 1.7; }
+    .testimonial-author { font-weight: 600; }
+    .testimonial-role { font-size: 14px; color: var(--color-text-secondary); }
+
+    /* ==================== CTA BANNER ==================== */
+    .cta-banner {
+      background: linear-gradient(135deg, #0F2B46 0%, #1E3A5F 100%);
+      color: #fff; text-align: center;
+      padding: var(--space-4xl) var(--space-lg);
+    }
+    .cta-banner h2 { color: #fff; }
+    .cta-banner .subtitle { color: rgba(255,255,255,0.8); margin: 0 auto var(--space-xl); }
+
+    /* ==================== CONTACT FORM ==================== */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); }
+    .form-group { margin-bottom: var(--space-md); }
+    .form-group label { display: block; font-weight: 500; margin-bottom: var(--space-sm); font-size: 0.9375rem; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 12px var(--space-md);
+      border: 1px solid var(--color-border); border-radius: var(--radius-md);
+      font-family: var(--font-sans); font-size: 1rem;
+      transition: border-color var(--transition-fast);
+      min-height: 44px;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--color-accent);
+      box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .contact-info-item { display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-lg); }
+    .contact-info-icon {
+      width: 40px; height: 40px; border-radius: var(--radius-md);
+      background: var(--color-surface); display: flex;
+      align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .contact-info-icon svg { width: 20px; height: 20px; stroke: var(--color-accent); }
+
+    /* ==================== FOOTER ==================== */
+    .footer { background: var(--color-primary); color: rgba(255,255,255,0.7); padding: var(--space-3xl) 0 var(--space-lg); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--space-xl); margin-bottom: var(--space-3xl); }
+    .footer-brand { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: var(--space-sm); }
+    .footer-brand span { font-weight: 400; opacity: 0.7; }
+    .footer h4 { color: #fff; margin-bottom: var(--space-md); font-size: 1rem; }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: var(--space-sm); }
+    .footer-links a { color: rgba(255,255,255,0.7); font-size: 0.9375rem; }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: var(--space-lg); text-align: center;
+      font-size: 14px;
+    }
+
+    /* ==================== ANIMATIONS ==================== */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in {
+        opacity: 0; transform: translateY(16px);
+        transition: opacity 400ms ease-out, transform 400ms ease-out;
+      }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 72px; left: 0; right: 0;
+        background: #fff; border-bottom: 1px solid var(--color-border);
+        padding: var(--space-lg); gap: var(--space-md);
+      }
+      .nav-toggle { display: block; }
+      .grid-3, .pricing-grid, .testimonial-grid { grid-template-columns: 1fr; }
+      .grid-4, .stats { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-card.featured { transform: none; }
+    }
+    @media (max-width: 640px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.75rem; }
+      .section { padding: var(--space-2xl) 0; }
+      .hero { padding: calc(72px + var(--space-2xl)) 0 var(--space-2xl); }
+      .grid-4, .stats { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .container { padding: 0 var(--space-md); }
+    }
+
+    /* Skip to content */
+    .skip-link {
+      position: absolute; top: -100%; left: var(--space-md);
+      background: var(--color-accent); color: #fff;
+      padding: var(--space-sm) var(--space-md); border-radius: var(--radius-md);
+      z-index: 200; font-weight: 600;
+    }
+    .skip-link:focus { top: var(--space-sm); color: #fff; }
+  </style>
+</head>
+<body>
+  <!-- Skip to content -->
+  <a href="#main" class="skip-link">Hopp til innhold</a>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Hovednavigasjon">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Klar <span>Digital</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#tjenester">Tjenester</a></li>
+        <li><a href="#prosess">Prosess</a></li>
+        <li><a href="#priser">Priser</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="#kontakt" class="btn btn-primary">Kom i gang</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Meny" aria-expanded="false">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            Tar imot nye kunder
+          </div>
+          <h1>Moderne nettsider som gir resultater</h1>
+          <p class="subtitle">Vi bygger raske, profesjonelle nettsider for lokale bedrifter i Norge — ferdig på dager, ikke måneder. Uten kostnaden til et stort byrå.</p>
+          <div class="hero-buttons">
+            <a href="#kontakt" class="btn btn-primary">Start prosjektet ditt</a>
+            <a href="#prosess" class="btn btn-secondary" style="color:#fff; border-color: rgba(255,255,255,0.3);">Se hvordan det fungerer</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="stats fade-in">
+          <div>
+            <div class="stat-number">7</div>
+            <div class="stat-label">Dager fra start til lansering</div>
+          </div>
+          <div>
+            <div class="stat-number">95+</div>
+            <div class="stat-label">Lighthouse ytelsesscore</div>
+          </div>
+          <div>
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Mobiltilpasset design</div>
+          </div>
+          <div>
+            <div class="stat-number">0</div>
+            <div class="stat-label">Skjulte kostnader</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="tjenester">
+      <div class="container text-center">
+        <p class="eyebrow">Tjenester</p>
+        <h2>Alt du trenger for en nettside som konverterer</h2>
+        <p class="subtitle centered" style="margin-bottom: var(--space-2xl);">Vi fokuserer på det som faktisk gir resultater for din bedrift — ikke fancy funksjoner ingen bruker.</p>
+        <div class="grid-3 fade-in">
+          <div class="card service-card">
+            <div class="card-icon" style="margin: 0 auto var(--space-md);">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25h-13.5A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25h-13.5A2.25 2.25 0 0 1 3 12V5.25"/></svg>
+            </div>
+            <h3>Nettside-design</h3>
+            <p>Rene, moderne design som ser profesjonelle ut og bygger tillit hos kundene dine.</p>
+          </div>
+          <div class="card service-card">
+            <div class="card-icon" style="margin: 0 auto var(--space-md);">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+            </div>
+            <h3>Lynrask ytelse</h3>
+            <p>Nettsider som laster på under 2 sekunder. Raskere sider = flere kunder som blir.</p>
+          </div>
+          <div class="card service-card">
+            <div class="card-icon" style="margin: 0 auto var(--space-md);">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>
+            </div>
+            <h3>Mobiltilpasset</h3>
+            <p>Perfekt opplevelse på mobil, nettbrett og desktop. Over 70% av dine kunder bruker mobilen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section section-alt" id="prosess">
+      <div class="container text-center">
+        <p class="eyebrow">Prosess</p>
+        <h2>Tre enkle steg til din nye nettside</h2>
+        <p class="subtitle centered" style="margin-bottom: var(--space-2xl);">Ingen kompliserte prosesser. Vi gjør det enkelt for deg.</p>
+        <div class="steps fade-in">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Fortell oss om bedriften</h3>
+            <p>Et kort skjema og en 30-minutters samtale. Vi samler alt vi trenger for å komme i gang.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Vi bygger nettsiden</h3>
+            <p>Vi designer, skriver innhold og bygger nettsiden din. Du ser en forhåndsvisning på dag 5.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Lansering på dag 7</h3>
+            <p>Etter godkjenning og eventuelle justeringer går nettsiden live. Ferdig!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section" id="priser">
+      <div class="container text-center">
+        <p class="eyebrow">Priser</p>
+        <h2>Enkel og rettferdig prising</h2>
+        <p class="subtitle centered" style="margin-bottom: var(--space-2xl);">Velg pakken som passer din bedrift. Ingen skjulte kostnader.</p>
+        <div class="pricing-grid fade-in">
+          <!-- Starter -->
+          <div class="pricing-card">
+            <h3>Starter</h3>
+            <p class="text-secondary" style="margin-top: var(--space-xs);">For deg som trenger en enkel nettside raskt</p>
+            <div class="pricing-price">4 990 kr <span>engangspris</span></div>
+            <ul class="pricing-features">
+              <li><span class="check">&#10003;</span> Ensidet landingsside</li>
+              <li><span class="check">&#10003;</span> Mobiltilpasset design</li>
+              <li><span class="check">&#10003;</span> Kontaktskjema</li>
+              <li><span class="check">&#10003;</span> SEO-grunnoppsett</li>
+              <li><span class="check">&#10003;</span> Ferdig på 7 dager</li>
+              <li><span class="check">&#10003;</span> 1 runde med endringer</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-secondary" style="width: 100%;">Velg Starter</a>
+          </div>
+          <!-- Growth (featured) -->
+          <div class="pricing-card featured">
+            <div class="pricing-badge">Mest populaer</div>
+            <h3>Growth</h3>
+            <p class="text-secondary" style="margin-top: var(--space-xs);">Komplett nettside for bedrifter som vil vokse</p>
+            <div class="pricing-price">9 990 kr <span>engangspris</span></div>
+            <ul class="pricing-features">
+              <li><span class="check">&#10003;</span> Opptil 5 sider</li>
+              <li><span class="check">&#10003;</span> Mobiltilpasset design</li>
+              <li><span class="check">&#10003;</span> Kontaktskjema + booking</li>
+              <li><span class="check">&#10003;</span> SEO-optimalisert</li>
+              <li><span class="check">&#10003;</span> Innholdstekster inkludert</li>
+              <li><span class="check">&#10003;</span> Google Analytics</li>
+              <li><span class="check">&#10003;</span> 2 runder med endringer</li>
+              <li><span class="check">&#10003;</span> Ferdig på 7 dager</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-primary" style="width: 100%;">Velg Growth</a>
+          </div>
+          <!-- Premium -->
+          <div class="pricing-card">
+            <h3>Premium</h3>
+            <p class="text-secondary" style="margin-top: var(--space-xs);">For bedrifter med høyere krav og ekstra behov</p>
+            <div class="pricing-price">19 990 kr <span>engangspris</span></div>
+            <ul class="pricing-features">
+              <li><span class="check">&#10003;</span> Opptil 10 sider</li>
+              <li><span class="check">&#10003;</span> Alt i Growth-pakken</li>
+              <li><span class="check">&#10003;</span> Portfolio / case-studier</li>
+              <li><span class="check">&#10003;</span> Egendefinert design</li>
+              <li><span class="check">&#10003;</span> Animasjoner og interaktivitet</li>
+              <li><span class="check">&#10003;</span> Prioritert support</li>
+              <li><span class="check">&#10003;</span> 3 runder med endringer</li>
+            </ul>
+            <a href="#kontakt" class="btn btn-secondary" style="width: 100%;">Velg Premium</a>
+          </div>
+        </div>
+        <p class="text-secondary" style="margin-top: var(--space-xl); font-size: 14px;">Valgfri månedlig vedlikeholdsavtale: 499 kr/mnd (hosting, oppdateringer, små endringer)</p>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-alt">
+      <div class="container text-center">
+        <p class="eyebrow">Tilbakemeldinger</p>
+        <h2>Hva kundene sier</h2>
+        <p class="subtitle centered" style="margin-bottom: var(--space-2xl);">Vi lar resultatene snakke for seg.</p>
+        <div class="testimonial-grid fade-in">
+          <div class="testimonial">
+            <p class="testimonial-text">"Vi fikk en nettside som ser ut som den kostet 50 000 kr, men til en brukdel av prisen. Kundene våre kommenterer stadig hvor fin den er."</p>
+            <p class="testimonial-author">Maria H.</p>
+            <p class="testimonial-role">Eier, Sentrum Fysioterapi</p>
+          </div>
+          <div class="testimonial">
+            <p class="testimonial-text">"Fra første samtale til ferdig nettside tok det bare en uke. Enkel prosess, flott resultat. Anbefales!"</p>
+            <p class="testimonial-author">Thomas B.</p>
+            <p class="testimonial-role">Daglig leder, Fjord Elektro</p>
+          </div>
+          <div class="testimonial">
+            <p class="testimonial-text">"Endelig en nettside som faktisk fungerer på mobil. Vi har sett en tydelig økning i henvendelser siden lanseringen."</p>
+            <p class="testimonial-author">Lise K.</p>
+            <p class="testimonial-role">Grunder, Kafe Solsiden</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Klar for en nettside som jobber for deg?</h2>
+        <p class="subtitle centered">Ta kontakt i dag, sa kan vi starte allerede denne uken. Ingen forpliktelser.</p>
+        <a href="#kontakt" class="btn btn-white">Start gratis konsultasjon</a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="kontakt">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: var(--space-2xl);">
+          <p class="eyebrow">Kontakt</p>
+          <h2>La oss snakke om din bedrift</h2>
+          <p class="subtitle centered">Fyll ut skjemaet, sa tar vi kontakt innen 24 timer.</p>
+        </div>
+        <div class="contact-grid fade-in">
+          <form id="contactForm" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Navn</label>
+              <input type="text" id="name" name="name" required placeholder="Ditt fulle navn">
+            </div>
+            <div class="form-group">
+              <label for="email">E-post</label>
+              <input type="email" id="email" name="email" required placeholder="din@epost.no">
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" placeholder="+47 000 00 000">
+            </div>
+            <div class="form-group">
+              <label for="package">Interessert i</label>
+              <select id="package" name="package">
+                <option value="">Velg en pakke (valgfritt)</option>
+                <option value="starter">Starter — 4 990 kr</option>
+                <option value="growth">Growth — 9 990 kr</option>
+                <option value="premium">Premium — 19 990 kr</option>
+                <option value="unsure">Usikker, trenger rådgivning</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Melding</label>
+              <textarea id="message" name="message" rows="4" placeholder="Fortell oss litt om bedriften din og hva du trenger..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send henvendelse</button>
+          </form>
+          <div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+              </div>
+              <div>
+                <h4>E-post</h4>
+                <p class="text-secondary">hei@klardigital.no</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25z"/></svg>
+              </div>
+              <div>
+                <h4>Telefon</h4>
+                <p class="text-secondary">+47 400 00 000</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/></svg>
+              </div>
+              <div>
+                <h4>Lokasjon</h4>
+                <p class="text-secondary">Norge (vi jobber digitalt)</p>
+              </div>
+            </div>
+            <div style="background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-lg); margin-top: var(--space-xl);">
+              <h4 style="margin-bottom: var(--space-sm);">Rask responstid</h4>
+              <p class="text-secondary" style="font-size: 0.9375rem;">Vi svarer på alle henvendelser innen 24 timer. De fleste prosjekter kan starte allerede denne uken.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Klar <span>Digital</span></div>
+          <p style="max-width: 300px;">Raske, profesjonelle nettsider for lokale bedrifter i Norge.</p>
+        </div>
+        <div>
+          <h4>Sider</h4>
+          <ul class="footer-links">
+            <li><a href="#tjenester">Tjenester</a></li>
+            <li><a href="#prosess">Prosess</a></li>
+            <li><a href="#priser">Priser</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul class="footer-links">
+            <li>hei@klardigital.no</li>
+            <li>+47 400 00 000</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Folg oss</h4>
+          <ul class="footer-links">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Klar Digital. Alle rettigheter reservert.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+    });
+
+    // Close menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Scroll-triggered fade-in animations
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    }
+
+    // Simple form handling
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = 'Sendt! Vi tar kontakt snart.';
+      btn.disabled = true;
+      btn.style.background = '#059669';
+    });
+  </script>
+</body>
+</html>

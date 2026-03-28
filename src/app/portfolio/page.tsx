@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Portfolio — Klar Digital",
   description:
-    "Se v\u00E5re tidligere prosjekter og hva vi kan gj\u00F8re for din bedrift.",
+    "Se våre tidligere prosjekter og hva vi kan gjøre for din bedrift.",
 };
 
 const placeholders = Array.from({ length: 6 }, (_, i) => ({
@@ -52,11 +52,11 @@ export default function PortfolioPage() {
                 className="text-2xl font-bold mt-6 mb-4"
                 style={{ color: "#0F2B46" }}
               >
-                Vi jobber med \u00E5 samle v\u00E5re beste prosjekter
+                Vi jobber med å samle våre beste prosjekter
               </h2>
               <p className="text-lg max-w-2xl mx-auto" style={{ color: "#64748B" }}>
-                Vi er i ferd med \u00E5 dokumentere v\u00E5re prosjekter. I mellomtiden kan
-                du ta kontakt for \u00E5 h\u00F8re mer om hva vi kan gj\u00F8re for deg.
+                Vi er i ferd med å dokumentere våre prosjekter. I mellomtiden kan
+                du ta kontakt for å høre mer om hva vi kan gjøre for deg.
               </p>
             </div>
 
@@ -73,7 +73,7 @@ export default function PortfolioPage() {
                     style={{ backgroundColor: "#F1F5F9" }}
                   >
                     <span className="text-4xl" style={{ color: "#CBD5E1" }} aria-hidden="true">
-                      {"\u{1F5BC}\uFE0F"}
+                      {"\u{1F5BC}️"}
                     </span>
                   </div>
                   <div className="p-4">

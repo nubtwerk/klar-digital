@@ -28,7 +28,7 @@ export default function KontaktPage() {
                 Kontakt oss
               </h1>
               <p className="text-lg leading-relaxed" style={{ color: "#94A3B8" }}>
-                Vi h\u00F8rer gjerne fra deg. Send oss en melding, s\u00E5 tar vi kontakt
+                Vi hører gjerne fra deg. Send oss en melding, så tar vi kontakt
                 innen 24 timer.
               </p>
             </div>
@@ -127,10 +127,10 @@ export default function KontaktPage() {
                         className="text-sm font-semibold mb-1"
                         style={{ color: "#0F2B46" }}
                       >
-                        \u00C5pningstider
+                        Åpningstider
                       </h3>
                       <p className="text-sm" style={{ color: "#64748B" }}>
-                        Mandag\u2013Fredag: 09:00\u201317:00
+                        Mandag–Fredag: 09:00–17:00
                       </p>
                     </div>
                   </div>

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Klar Digital \u2014 Nettsider som leverer resultater",
+  title: "Klar Digital — Nettsider som leverer resultater",
   description:
-    "Klar Digital hjelper lokale bedrifter med \u00E5 vokse digitalt gjennom profesjonelle nettsider og digital markedsf\u00F8ring.",
+    "Klar Digital hjelper lokale bedrifter med å vokse digitalt gjennom profesjonelle nettsider og digital markedsføring.",
 };
 
 export default function RootLayout({

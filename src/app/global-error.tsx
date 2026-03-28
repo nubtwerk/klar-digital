@@ -16,7 +16,7 @@ export default function GlobalError({
             onClick={() => reset()}
             style={{ padding: "0.75rem 1.5rem", backgroundColor: "#2563EB", color: "#fff", border: "none", borderRadius: "0.5rem", cursor: "pointer", fontSize: "1rem" }}
           >
-            Pr\u00F8v igjen
+            Prøv igjen
           </button>
         </div>
       </body>

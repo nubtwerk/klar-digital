@@ -29,13 +29,13 @@ export default function ContactForm() {
 
   function validate(): FormErrors {
     const errs: FormErrors = {};
-    if (!formData.navn.trim()) errs.navn = "Navn er p\u00E5krevd";
+    if (!formData.navn.trim()) errs.navn = "Navn er påkrevd";
     if (!formData.epost.trim()) {
-      errs.epost = "E-post er p\u00E5krevd";
+      errs.epost = "E-post er påkrevd";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.epost)) {
       errs.epost = "Ugyldig e-postadresse";
     }
-    if (!formData.melding.trim()) errs.melding = "Melding er p\u00E5krevd";
+    if (!formData.melding.trim()) errs.melding = "Melding er påkrevd";
     return errs;
   }
 
@@ -70,7 +70,7 @@ export default function ContactForm() {
         style={{ backgroundColor: "#F0FDF4", borderColor: "#BBF7D0" }}
       >
         <div className="text-4xl mb-4" aria-hidden="true">
-          \u2705
+          ✅
         </div>
         <h3
           className="text-xl font-semibold mb-2"

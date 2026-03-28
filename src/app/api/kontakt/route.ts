@@ -4,13 +4,13 @@ export async function POST(request: Request) {
   const body = await request.json();
 
   const errors: Record<string, string> = {};
-  if (!body.navn?.trim()) errors.navn = "Navn er p\u00E5krevd";
+  if (!body.navn?.trim()) errors.navn = "Navn er påkrevd";
   if (!body.epost?.trim()) {
-    errors.epost = "E-post er p\u00E5krevd";
+    errors.epost = "E-post er påkrevd";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.epost)) {
     errors.epost = "Ugyldig e-postadresse";
   }
-  if (!body.melding?.trim()) errors.melding = "Melding er p\u00E5krevd";
+  if (!body.melding?.trim()) errors.melding = "Melding er påkrevd";
 
   if (Object.keys(errors).length > 0) {
     return NextResponse.json({ errors }, { status: 400 });

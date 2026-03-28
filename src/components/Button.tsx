@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { type ButtonHTMLAttributes, type ReactNode } from "react";
+import { type ButtonHTMLAttributes, type CSSProperties, type ReactNode } from "react";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
@@ -9,7 +9,9 @@ interface ButtonBaseProps {
   size?: ButtonSize;
   children: ReactNode;
   className?: string;
+  style?: CSSProperties;
   href?: string;
+  onClick?: () => void;
 }
 
 type ButtonProps = ButtonBaseProps &
@@ -35,7 +37,9 @@ export default function Button({
   size = "md",
   children,
   className = "",
+  style,
   href,
+  onClick,
   ...props
 }: ButtonProps) {
   const baseStyles =
@@ -52,14 +56,14 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={combinedClassName}>
+      <Link href={href} className={combinedClassName} style={style} onClick={onClick}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button className={combinedClassName} {...props}>
+    <button className={combinedClassName} style={style} onClick={onClick} {...props}>
       {children}
     </button>
   );

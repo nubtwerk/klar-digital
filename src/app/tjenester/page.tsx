@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Tjenester — Klar Digital",
   description:
-    "Velg den pakken som passer din bedrift. Fra enkel nettside til komplett digital l\u00F8sning.",
+    "Velg den pakken som passer din bedrift. Fra enkel nettside til komplett digital løsning.",
 };
 
 const packages = [
@@ -24,7 +24,7 @@ const packages = [
       "Grunnleggende SEO-oppsett",
       "Mobilvennlig",
       "SSL-sertifikat",
-      "Leveringstid: 5\u20137 dager",
+      "Leveringstid: 5–7 dager",
     ],
     highlighted: false,
   },
@@ -33,7 +33,7 @@ const packages = [
     name: "Vekst",
     price: "9 900 kr",
     description:
-      "For bedrifter som \u00F8nsker \u00E5 vokse og f\u00E5 flere kunder p\u00E5 nett.",
+      "For bedrifter som ønsker å vokse og få flere kunder på nett.",
     features: [
       "Alt i Kickstart",
       "Inntil 10 sider",
@@ -41,7 +41,7 @@ const packages = [
       "Kontaktskjema med e-postvarsling",
       "Ytelsesoptimalisering (95+ Lighthouse)",
       "Google Analytics-integrasjon",
-      "Leveringstid: 7\u201310 dager",
+      "Leveringstid: 7–10 dager",
     ],
     highlighted: true,
   },
@@ -50,15 +50,15 @@ const packages = [
     name: "Komplett",
     price: "19 900 kr",
     description:
-      "Den komplette digitale pakken for ambisi\u00F8se bedrifter.",
+      "Den komplette digitale pakken for ambisiøse bedrifter.",
     features: [
       "Alt i Vekst",
       "Ubegrenset antall sider",
       "E-handel eller booking-system",
       "Skreddersydde funksjoner",
       "CMS for enkel innholdsredigering",
-      "Prioritert support i 3 m\u00E5neder",
-      "Leveringstid: 10\u201314 dager",
+      "Prioritert support i 3 måneder",
+      "Leveringstid: 10–14 dager",
     ],
     highlighted: false,
   },
@@ -87,7 +87,7 @@ function renderCell(value: boolean | string) {
     );
   }
   return value ? (
-    <span style={{ color: "#059669" }} aria-label="Inkludert">\u2713</span>
+    <span style={{ color: "#059669" }} aria-label="Inkludert">✓</span>
   ) : (
     <span style={{ color: "#CBD5E1" }} aria-label="Ikke inkludert">—</span>
   );
@@ -107,11 +107,11 @@ export default function TjenesterPage() {
           <Container>
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-                V\u00E5re tjenester
+                Våre tjenester
               </h1>
               <p className="text-lg leading-relaxed" style={{ color: "#94A3B8" }}>
                 Vi tilbyr tre pakker tilpasset ulike behov og budsjetter. Alle
-                inkluderer personlig oppf\u00F8lging og norsk kvalitet.
+                inkluderer personlig oppfølging og norsk kvalitet.
               </p>
             </div>
           </Container>
@@ -139,7 +139,7 @@ export default function TjenesterPage() {
                       className="inline-block self-start px-3 py-1 rounded-full text-xs font-semibold mb-4"
                       style={{ backgroundColor: "#EFF6FF", color: "#2563EB" }}
                     >
-                      Mest popul\u00E6r
+                      Mest populær
                     </span>
                   )}
                   <h2
@@ -172,7 +172,7 @@ export default function TjenesterPage() {
                           style={{ color: "#059669" }}
                           aria-hidden="true"
                         >
-                          \u2713
+                          ✓
                         </span>
                         {f}
                       </li>
@@ -241,11 +241,11 @@ export default function TjenesterPage() {
           <Container>
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                Usikker p\u00E5 hvilken pakke?
+                Usikker på hvilken pakke?
               </h2>
               <p className="text-lg mb-8" style={{ color: "#BFDBFE" }}>
                 Ta kontakt for en gratis og uforpliktende konsultasjon. Vi
-                hjelper deg \u00E5 finne riktig l\u00F8sning.
+                hjelper deg å finne riktig løsning.
               </p>
               <Button
                 href="/kontakt"

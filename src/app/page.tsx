@@ -37,7 +37,7 @@ const services = [
 
 const stats = [
   { value: "7 dager", label: "Leveringstid" },
-  { value: "50+", label: "Forn\u00F8yde kunder" },
+  { value: "50+", label: "Fornøyde kunder" },
   { value: "95+", label: "Lighthouse-score" },
   { value: "100%", label: "Mobilvennlig" },
 ];
@@ -47,7 +47,7 @@ const steps = [
     number: "01",
     title: "Gratis konsultasjon",
     description:
-      "Vi starter med en uforpliktende samtale for \u00E5 forst\u00E5 dine behov og m\u00E5l.",
+      "Vi starter med en uforpliktende samtale for å forstå dine behov og mål.",
   },
   {
     number: "02",
@@ -59,13 +59,13 @@ const steps = [
     number: "03",
     title: "Utvikling",
     description:
-      "Vi bygger nettsiden din med fokus p\u00E5 hastighet, SEO og brukervennlighet.",
+      "Vi bygger nettsiden din med fokus på hastighet, SEO og brukervennlighet.",
   },
   {
     number: "04",
-    title: "Lansering og oppf\u00F8lging",
+    title: "Lansering og oppfølging",
     description:
-      "Vi lanserer nettsiden og gir deg oppl\u00E6ring s\u00E5 du kan oppdatere selv.",
+      "Vi lanserer nettsiden og gir deg opplæring så du kan oppdatere selv.",
   },
 ];
 
@@ -73,21 +73,21 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "Klar Digital leverte nettsiden v\u00E5r p\u00E5 under en uke. Profesjonelt, raskt og til en veldig god pris.",
+      "Klar Digital leverte nettsiden vår på under en uke. Profesjonelt, raskt og til en veldig god pris.",
     author: "Maria Hansen",
     role: "Daglig leder, Hansen Bakeri",
   },
   {
     id: 2,
     quote:
-      "Etter at vi fikk ny nettside har vi f\u00E5tt dobbelt s\u00E5 mange henvendelser. Fantastisk jobb!",
+      "Etter at vi fikk ny nettside har vi fått dobbelt så mange henvendelser. Fantastisk jobb!",
     author: "Erik Johansen",
     role: "Eier, Johansen Elektro",
   },
   {
     id: 3,
     quote:
-      "Endelig en nettside vi er stolte av. Klar Digital forsto n\u00F8yaktig hva vi trengte.",
+      "Endelig en nettside vi er stolte av. Klar Digital forsto nøyaktig hva vi trengte.",
     author: "Lise Berg",
     role: "Grunnlegger, Berg Interiør",
   },
@@ -110,7 +110,7 @@ export default function HomePage() {
                 className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-6"
                 style={{ backgroundColor: "#1E3A5F", color: "#93C5FD" }}
               >
-                Profesjonell digital tilstedev\u00E6relse
+                Profesjonell digital tilstedeværelse
               </span>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
@@ -122,9 +122,9 @@ export default function HomePage() {
                 className="text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl"
                 style={{ color: "#94A3B8" }}
               >
-                Vi hjelper lokale bedrifter med \u00E5 vokse digitalt. F\u00E5 en
+                Vi hjelper lokale bedrifter med å vokse digitalt. Få en
                 profesjonell nettside som tiltrekker kunder og bygger tillit —
-                levert p\u00E5 under 7 dager.
+                levert på under 7 dager.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -138,7 +138,7 @@ export default function HomePage() {
                   className="border border-white/30 hover:bg-white/10"
                   style={{ color: "#ffffff" }}
                 >
-                  Se v\u00E5re tjenester
+                  Se våre tjenester
                 </Button>
               </div>
             </div>
@@ -171,14 +171,14 @@ export default function HomePage() {
                 className="text-3xl sm:text-4xl font-bold mb-4"
                 style={{ color: "#0F2B46" }}
               >
-                V\u00E5re pakker
+                Våre pakker
               </h2>
               <p
                 className="text-lg max-w-2xl mx-auto"
                 style={{ color: "#64748B" }}
               >
                 Velg pakken som passer din bedrift. Alle inkluderer responsivt
-                design, SEO-grunnlag og personlig oppf\u00F8lging.
+                design, SEO-grunnlag og personlig oppfølging.
               </p>
             </div>
 
@@ -244,7 +244,7 @@ export default function HomePage() {
                 className="text-lg max-w-2xl mx-auto"
                 style={{ color: "#64748B" }}
               >
-                Fra f\u00F8rste samtale til ferdig nettside — en enkel prosess i fire
+                Fra første samtale til ferdig nettside — en enkel prosess i fire
                 steg.
               </p>
             </div>
@@ -291,7 +291,7 @@ export default function HomePage() {
                 style={{ color: "#64748B" }}
               >
                 Alle pakker inkluderer grunnleggende funksjoner. Oppgrader for
-                mer avanserte l\u00F8sninger.
+                mer avanserte løsninger.
               </p>
             </div>
 
@@ -349,7 +349,7 @@ export default function HomePage() {
                       <td className="py-3 px-4 text-center text-lg">
                         {kick ? (
                           <span style={{ color: "#059669" }} aria-label="Inkludert">
-                            \u2713
+                            ✓
                           </span>
                         ) : (
                           <span style={{ color: "#CBD5E1" }} aria-label="Ikke inkludert">
@@ -360,7 +360,7 @@ export default function HomePage() {
                       <td className="py-3 px-4 text-center text-lg">
                         {vekst ? (
                           <span style={{ color: "#059669" }} aria-label="Inkludert">
-                            \u2713
+                            ✓
                           </span>
                         ) : (
                           <span style={{ color: "#CBD5E1" }} aria-label="Ikke inkludert">
@@ -371,7 +371,7 @@ export default function HomePage() {
                       <td className="py-3 px-4 text-center text-lg">
                         {komplett ? (
                           <span style={{ color: "#059669" }} aria-label="Inkludert">
-                            \u2713
+                            ✓
                           </span>
                         ) : (
                           <span style={{ color: "#CBD5E1" }} aria-label="Ikke inkludert">
@@ -433,7 +433,7 @@ export default function HomePage() {
                 className="text-lg max-w-2xl mx-auto"
                 style={{ color: "#64748B" }}
               >
-                Vi er stolte av \u00E5 levere resultater som gj\u00F8r en forskjell.
+                Vi er stolte av å levere resultater som gjør en forskjell.
               </p>
             </div>
 
@@ -480,14 +480,14 @@ export default function HomePage() {
           <Container>
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                Klar for \u00E5 vokse digitalt?
+                Klar for å vokse digitalt?
               </h2>
               <p
                 className="text-lg mb-8 leading-relaxed"
                 style={{ color: "#BFDBFE" }}
               >
-                Ta kontakt i dag og f\u00E5 en gratis konsultasjon. Vi hjelper deg \u00E5
-                finne den beste l\u00F8sningen for din bedrift.
+                Ta kontakt i dag og få en gratis konsultasjon. Vi hjelper deg å
+                finne den beste løsningen for din bedrift.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -523,7 +523,7 @@ export default function HomePage() {
                   Ta kontakt
                 </h2>
                 <p className="text-lg" style={{ color: "#64748B" }}>
-                  Fyll ut skjemaet s\u00E5 tar vi kontakt innen 24 timer.
+                  Fyll ut skjemaet så tar vi kontakt innen 24 timer.
                 </p>
               </div>
               <ContactForm />

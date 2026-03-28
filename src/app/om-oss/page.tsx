@@ -8,32 +8,32 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Om oss — Klar Digital",
   description:
-    "L\u00E6r mer om Klar Digital — et norsk digitalbyr\u00E5 som hjelper lokale bedrifter med \u00E5 vokse p\u00E5 nett.",
+    "Lær mer om Klar Digital — et norsk digitalbyrå som hjelper lokale bedrifter med å vokse på nett.",
 };
 
 const values = [
   {
     title: "Enkelhet",
     description:
-      "Vi fjerner det un\u00F8dvendige. Hvert element p\u00E5 nettsiden din har en jobb \u00E5 gj\u00F8re.",
-    icon: "\u2728",
+      "Vi fjerner det unødvendige. Hvert element på nettsiden din har en jobb å gjøre.",
+    icon: "✨",
   },
   {
     title: "Klarhet",
     description:
-      "Tydelig kommunikasjon, ren design og ingen sjargong. Vi snakker ditt spr\u00E5k.",
+      "Tydelig kommunikasjon, ren design og ingen sjargong. Vi snakker ditt språk.",
     icon: "\u{1F4A1}",
   },
   {
     title: "Hastighet",
     description:
       "Rask levering, raske nettsider og raske beslutninger. Vi verdsetter tiden din.",
-    icon: "\u26A1",
+    icon: "⚡",
   },
   {
     title: "Profesjonalitet",
     description:
-      "Polert og tilgjengelig. Aldri stivt, aldri sl\u00F8vt. Alltid p\u00E5litelig.",
+      "Polert og tilgjengelig. Aldri stivt, aldri sløvt. Alltid pålitelig.",
     icon: "\u{1F3AF}",
   },
 ];
@@ -55,8 +55,8 @@ export default function OmOssPage() {
                 Om Klar Digital
               </h1>
               <p className="text-lg leading-relaxed" style={{ color: "#94A3B8" }}>
-                Vi er et norsk digitalbyr\u00E5 med \u00E9n klar misjon: hjelpe lokale
-                bedrifter med \u00E5 lykkes p\u00E5 nett.
+                Vi er et norsk digitalbyrå med én klar misjon: hjelpe lokale
+                bedrifter med å lykkes på nett.
               </p>
             </div>
           </Container>
@@ -70,24 +70,24 @@ export default function OmOssPage() {
                 className="text-3xl font-bold mb-6"
                 style={{ color: "#0F2B46" }}
               >
-                V\u00E5r historie
+                Vår historie
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "#64748B" }}>
                 <p>
                   Klar Digital ble grunnlagt med en enkel observasjon: altfor mange
-                  lokale bedrifter sliter med \u00E5 f\u00E5 en profesjonell digital
-                  tilstedev\u00E6relse. Enten er l\u00F8sningene for dyre, for
+                  lokale bedrifter sliter med å få en profesjonell digital
+                  tilstedeværelse. Enten er løsningene for dyre, for
                   kompliserte, eller tar for lang tid.
                 </p>
                 <p>
-                  Vi bestemte oss for \u00E5 gj\u00F8re det annerledes. Ved \u00E5 kombinere
+                  Vi bestemte oss for å gjøre det annerledes. Ved å kombinere
                   moderne teknologi med skandinavisk designfilosofi leverer vi
                   nettsider som ser profesjonelle ut, laster raskt og — viktigst
                   av alt — gir resultater.
                 </p>
                 <p>
-                  V\u00E5r tiln\u00E6rming er enkel: vi lytter til dine behov, designer en
-                  l\u00F8sning som passer, og leverer den p\u00E5 rekordtid. Ingen
+                  Vår tilnærming er enkel: vi lytter til dine behov, designer en
+                  løsning som passer, og leverer den på rekordtid. Ingen
                   overraskelser, ingen skjulte kostnader, bare ren verdi.
                 </p>
               </div>
@@ -103,10 +103,10 @@ export default function OmOssPage() {
                 className="text-3xl font-bold mb-4"
                 style={{ color: "#0F2B46" }}
               >
-                V\u00E5re verdier
+                Våre verdier
               </h2>
               <p className="text-lg max-w-2xl mx-auto" style={{ color: "#64748B" }}>
-                Alt vi gj\u00F8r er forankret i fire kjerneverdier.
+                Alt vi gjør er forankret i fire kjerneverdier.
               </p>
             </div>
 
@@ -152,7 +152,7 @@ export default function OmOssPage() {
                 {[
                   {
                     title: "Rask levering",
-                    desc: "De fleste nettsider er klare p\u00E5 under 7 dager.",
+                    desc: "De fleste nettsider er klare på under 7 dager.",
                   },
                   {
                     title: "Faste priser",
@@ -163,8 +163,8 @@ export default function OmOssPage() {
                     desc: "Designet og utviklet i Norge, for norske bedrifter.",
                   },
                   {
-                    title: "Personlig oppf\u00F8lging",
-                    desc: "Du f\u00E5r en fast kontaktperson gjennom hele prosessen.",
+                    title: "Personlig oppfølging",
+                    desc: "Du får en fast kontaktperson gjennom hele prosessen.",
                   },
                 ].map((item) => (
                   <div
@@ -176,7 +176,7 @@ export default function OmOssPage() {
                       style={{ color: "#059669" }}
                       aria-hidden="true"
                     >
-                      \u2713
+                      ✓
                     </span>
                     <div>
                       <h3
